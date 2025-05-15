@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>놀면뭐하죠 팀 - 새우들깨크림파스타 밀키트</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-gray-50">
+    <!-- 1) Header -->
+    <header class="bg-white shadow">
+      <div
+        class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <h1 class="text-2xl font-bold text-purple-600">놀면뭐하죠 팀</h1>
+        <nav class="space-x-4">
+          <a href="#" class="text-gray-700 hover:text-purple-600">홈</a>
+          <a href="#" class="text-gray-700 hover:text-purple-600">상품</a>
+          <a href="#" class="text-gray-700 hover:text-purple-600">장바구니</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- 2) Breadcrumb -->
+    <div class="max-w-5xl mx-auto px-4 py-3 text-sm text-gray-500">
+      홈 &gt; 밀키트 &gt;
+      <span class="text-gray-800">새우들깨크림파스타 밀키트</span>
+    </div>
+
+    <!-- 3) 상품 상세 섹션 -->
+    <main class="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-8 py-6">
+      <!-- 이미지 갤러리 -->
+      <div class="space-y-4">
+        <img
+          src="https://via.placeholder.com/600x400?text=메인+이미지"
+          alt="비건새우들깨크림파스타"
+          class="w-full rounded-xl shadow"
+        />
+        <div class="grid grid-cols-3 gap-2">
+          <img
+            src="https://via.placeholder.com/150?text=이미지1"
+            class="w-full rounded-lg cursor-pointer"
+          />
+          <img
+            src="https://via.placeholder.com/150?text=이미지2"
+            class="w-full rounded-lg cursor-pointer"
+          />
+          <img
+            src="https://via.placeholder.com/150?text=이미지3"
+            class="w-full rounded-lg cursor-pointer"
+          />
+        </div>
+      </div>
+
+      <!-- 상품 정보 -->
+      <div class="flex flex-col justify-between">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-800">
+            비건새우들깨크림파스타밀키트
+          </h2>
+          <p class="mt-2 text-purple-600 text-2xl font-semibold">12,500원</p>
+          <p class="mt-4 text-gray-700">
+            고소한 들깨크림에 탱글한 새우가 듬뿍! 집에서 즐기는 완벽한 밀키트.
+          </p>
+        </div>
+        <button
+          class="mt-6 bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition"
+        >
+          장바구니에 담기
+        </button>
+      </div>
+    </main>
+
+    <!-- 4) 상세 탭 (간단 예시) -->
+    <section class="max-w-5xl mx-auto px-4 py-6 bg-white rounded-lg shadow">
+      <div>
+        <!-- 탭 버튼 -->
+        <div class="flex space-x-4 mb-4">
+          <button
+            onclick="showTab('info')"
+            class="py-2 px-4 bg-purple-600 text-white rounded"
+            id="btn-info"
+          >
+            상품 정보
+          </button>
+          <button
+            onclick="showTab('shipping')"
+            class="py-2 px-4 bg-gray-200 rounded"
+            id="btn-shipping"
+          >
+            배송/반품
+          </button>
+          <button
+            onclick="showTab('review')"
+            class="py-2 px-4 bg-gray-200 rounded"
+            id="btn-review"
+          >
+            리뷰
+          </button>
+        </div>
+
+        <!-- 탭 내용 -->
+        <div id="tab-info">
+          <h3 class="font-medium mb-2">✔ 구성</h3>
+          <p>
+            새우들깨크림소스 2팩, 파스타면 2인분, 포르치니 버섯, 100% 비건식품
+          </p>
+          <h3 class="font-medium mb-2 mt-4">✔ 보관 방법</h3>
+          <p>냉동 보관 (−10℃ 이하)</p>
+        </div>
+        <div id="tab-shipping" class="hidden">
+          <p>
+            🚚 배송은 주문 후 1~2일 이내 도착, 냉동 포장으로 안전하게 신속하게
+            정확하게 프레쉬 배송!
+          </p>
+        </div>
+        <div id="tab-review" class="hidden">
+          <p>📝 "진짜 맛있어요!" - 고객1</p>
+          <p>📝 "새우가 탱글탱글!" - 고객2</p>
+          <p>📝 "비건을 원하는 사람들에게 최고의 선택!" - 고객3</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5) Footer -->
+    <footer class="mt-12 bg-gray-100 py-6">
+      <div class="max-w-5xl mx-auto px-4 text-sm text-gray-600">
+        © 2025 놀면뭐하죠 팀 &middot; 고객센터 1234‑5678
+      </div>
+    </footer>
+
+    <script>
+      function showTab(tabName) {
+        // 모든 탭 내용 숨기기
+        document.getElementById("tab-info").classList.add("hidden");
+        document.getElementById("tab-shipping").classList.add("hidden");
+        document.getElementById("tab-review").classList.add("hidden");
+
+        // 선택된 탭만 보이기
+        document.getElementById(`tab-${tabName}`).classList.remove("hidden");
+
+        // 버튼 색상 바꾸기
+        document
+          .getElementById("btn-info")
+          .classList.remove("bg-purple-600", "text-white");
+        document
+          .getElementById("btn-shipping")
+          .classList.remove("bg-purple-600", "text-white");
+        document
+          .getElementById("btn-review")
+          .classList.remove("bg-purple-600", "text-white");
+
+        document
+          .getElementById(`btn-${tabName}`)
+          .classList.add("bg-purple-600", "text-white");
+      }
+    </script>
+  </body>
+</html>
